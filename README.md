@@ -1,29 +1,16 @@
-# Visual acuity charts
+# Code to Generate Latin and Canadian Aboriginal Syllabics (CAS) Visual Acuity (VA) Charts
 *Adapted from https://github.com/manu-mannattil/vachart*
 
-This repository contains a LaTeX file and a Python script for making
-random [Snellen charts][snellen].  A PDF with 10 charts, meant to be
-kept at a distance of 3 m, has been included with this repository.  To
-generate the TeX commands for new charts, run `VA_Chart.py`.  Then, edit
-`CAS.tex` or `Latin.tex` and change the distance `\factor` if required.  To compile
-the file, run `make` or compile using XeLaTeX.
+This repository contains a LaTeX file and a Python script for making random [Snellen charts][snellen].  PDFs with Latin and CAS charts, meant to be kept at a distance of 3 m, have been included with this repository.  To generate the TeX commands for new charts, run `VA_Chart.py`.  Then, edit `CAS.tex` or `Latin.tex` and change the distance `\factor` if required.  To compile the file, run `make` or compile using XeLaTeX.
 
 <img align="right" width=360px src="https://github.com/shaanbhambra/CAS_Snellen_VA_Chart/raw/main/Figure.png"/>
 
 ## Background
 
-The Snellen chart consists of a series of optotypes (usually the letters
-C, D, E, F, L, O, P, T, and Z) in different sizes. Using elementary
-trigonometry, the equation that relates the optotype width (or height)
-<i>w</i>, the subtended angle φ, and the distance to the chart <i>d</i>,
-is
-
+The Snellen chart consists of a series of optotypes (usually the letters C, D, E, F, L, O, P, T, and Z) in different sizes. Using elementary trigonometry, the equation that relates the optotype width (or height) <i>w</i>, the subtended angle φ, and the distance to the chart <i>d</i>, is 
 <i>w</i> = 2<i>d</i> tan(φ/2)
 
-A person's vision is considered normal (i.e., 6/6 or 20/20 vision) if he
-or she can delineate 1-arcminute-wide features of an optotype that has
-an angular width of 5 arcminutes.  Conventionally, the Snellen chart is
-kept at a distance of 6 m.  This means that the optotype width must be
+A person's vision is considered normal (i.e., 6/6 or 20/20 vision) if he or she can delineate 1-arcminute-wide features of an optotype that has an angular width of 5 arcminutes.  Conventionally, the Snellen chart is kept at a distance of 6 m.  This means that the optotype width must be
 
 <i>w</i> = (12 m) × tan(π/4320) = 8.73 mm.
 
@@ -35,9 +22,7 @@ A. R. Elkington, H. J. Frank, M. J. Greaney, Clinical Optics, 3rd ed. (Blackwell
 
 ## Disclaimer and license
 
-This repository is for informational purposes only and do not constitute
-medical advice. It is not intended to replace the advice of a qualified
-health provider or a licensed optometrist.
+This repository is for informational purposes only and do not constitute medical advice. It is not intended to replace the advice of a qualified health provider or a licensed optometrist.
 
 [snellen]: https://en.wikipedia.org/wiki/Snellen_chart
 [sil]: http://scripts.sil.org/OFL
