@@ -1,5 +1,6 @@
 # Visual acuity charts
-**Adapted from https://github.com/manu-mannattil/vachart**
+*Adapted from https://github.com/manu-mannattil/vachart*
+
 This repository contains a LaTeX file and a Python script for making
 random [Snellen charts][snellen].  A PDF with 10 charts, meant to be
 kept at a distance of 3 m, has been included with this repository.  To
