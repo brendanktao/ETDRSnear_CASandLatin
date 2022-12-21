@@ -7,7 +7,7 @@ generate the TeX commands for new charts, run `VA_Chart.py`.  Then, edit
 `CAS.tex` or `Latin.tex` and change the distance `\factor` if required.  To compile
 the file, run `make` or compile using XeLaTeX.
 
-<img align="right" width=360px src="https://raw.githubusercontent.com/manu-mannattil/assets/master/vachart/snellen.svg"/>
+<img align="right" width=360px src="https://github.com/shaanbhambra/CAS_Snellen_VA_Chart/raw/main/Figure.png"/>
 
 ## Background
 
