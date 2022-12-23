@@ -22,7 +22,7 @@ R. J. Kolker, [Subjective Refraction and Prescribing Glasses][sub] (American Aca
 
 A. R. Elkington, H. J. Frank, M. J. Greaney, Clinical Optics, 3rd ed. (Blackwell Science, Oxford, 1999).
 
-## Disclaimer and license
+## Disclaimer and License
 
 This repository is for informational purposes only and do not constitute medical advice. It is not intended to replace the advice of a qualified health provider or a licensed optometrist.
 
