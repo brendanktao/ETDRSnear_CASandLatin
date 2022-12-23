@@ -7,7 +7,9 @@ This repository contains a LaTeX file and a Python script for making random [Sne
 
 ## Background
 
-The Snellen chart consists of a series of optotypes (usually the letters C, D, E, F, L, O, P, T, and Z) in different sizes. Using elementary trigonometry, the equation that relates the optotype width (or height) <i>w</i>, the subtended angle φ, and the distance to the chart <i>d</i>, is 
+The Snellen chart consists of a series of optotypes (usually the Latin letters C, D, E, F, L, O, P, T, and Z) in different sizes. We have developed here a visual acuity chart using Canadian Aboriginal Syllabics (CAS) using the optotypes of ᐱ, ᑎ, ᑭ, ᒧ, ᒋ, ᒥ, ᑯ, ᒧ, and ᔨ.
+
+Using elementary trigonometry, the equation that relates the optotype width (or height) <i>w</i>, the subtended angle φ, and the distance to the chart <i>d</i>, is 
 <i>w</i> = 2<i>d</i> tan(φ/2)
 
 A person's vision is considered normal (i.e., 6/6 or 20/20 vision) if he or she can delineate 1-arcminute-wide features of an optotype that has an angular width of 5 arcminutes.  Conventionally, the Snellen chart is kept at a distance of 6 m.  This means that the optotype width must be
