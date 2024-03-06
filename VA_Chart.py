@@ -10,8 +10,8 @@ mm_to_points = METER_TO_INCHES * INCH_TO_POINTS / 1000
 base_optotype_size = BASE_OPTOTYPE_MM * mm_to_points
 
 # Optotypes: Sloan letters for ETDRS
-optotypes = list("CDHKNORSVZ")
-#optotypes = list("ᐱᑎᑭᒧᒋᒥᑯᒧᔨ") # standard CASE letters
+#optotypes = list("CDHKNORSVZ")
+optotypes = list("ᐱᑎᑭᒧᒋᒥᑯᒧᔨ") # standard CASE letters
 
 # ETDRS chart configuration
 glyphs = [5] * 14  # Assuming 14 lines for demonstration
