@@ -1,5 +1,5 @@
 # Code to Generate Latin and Canadian Aboriginal Syllabics (CAS) Visual Acuity (VA) Charts
-*Adapted from https://github.com/manu-mannattil/vachart*
+*Adapted from https://github.com/manu-mannattil/vachart AND https://github.com/shaanbhambra/CAS_Snellen_VA_Chart*
 
 This repository contains a LaTeX file and a Python script for making random [Snellen charts][snellen].  PDFs with [Latin](https://github.com/shaanbhambra/CAS_Snellen_VA_Chart/raw/main/Examples%20for%20Use%20at%203%20m/Latin.pdf) and [CAS](https://github.com/shaanbhambra/CAS_Snellen_VA_Chart/raw/main/Examples%20for%20Use%20at%203%20m/CAS.pdf) charts, meant to be kept at a distance of 3 m, have been included with this repository.  To generate the TeX commands for new charts, run `VA_Chart.py`.  Then, edit `CAS.tex` or `Latin.tex` and change the distance `\factor` if required.  To compile the file, run `make` or compile using XeLaTeX. We recommend using [Overleaf](https://overleaf.com) for generating PDFs.
 
