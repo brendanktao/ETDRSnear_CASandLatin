@@ -2,111 +2,85 @@
 
 \documentclass{article}
 \usepackage{geometry}
-\geometry{letterpaper, portrait, margin=0in}
+\geometry{
+    paperwidth=64.8cm,
+    paperheight=62.2cm,
+    margin=2in} % or another value if you need a margin
 
 \usepackage{calc}
 \usepackage{eso-pic}
-
-\newlength{\PageFrameTopMargin}
-\newlength{\PageFrameBottomMargin}
-\newlength{\PageFrameLeftMargin}
-\newlength{\PageFrameRightMargin}
-
-\setlength{\PageFrameTopMargin}{1cm}
-\setlength{\PageFrameBottomMargin}{1cm}
-\setlength{\PageFrameLeftMargin}{1cm}
-\setlength{\PageFrameRightMargin}{1cm}
-
-\makeatletter
-
-\newlength{\Page@FrameHeight}
-\newlength{\Page@FrameWidth}
-
-%\AddToShipoutPicture{
-%  \thinlines
-%  \setlength{\Page@FrameHeight}{\paperheight-\PageFrameTopMargin-\PageFrameBottomMargin}
-%  \setlength{\Page@FrameWidth}{\paperwidth-\PageFrameLeftMargin-\PageFrameRightMargin}
-%  \put(\strip@pt\PageFrameLeftMargin,\strip@pt\PageFrameTopMargin){
-%    \framebox(\strip@pt\Page@FrameWidth, \strip@pt\Page@FrameHeight){}}}
-
-\makeatother
-
-% Factor = 4m/6m.
-% This is obtained by dividing the distance at which the chart is kept
-% by 6 m.  Note that this sometimes needs to be slightly tweaked to get
-\def\factor{0.66667}
-
 \usepackage{fontspec}
-%%% For language switching -- like babel, but for xelatex
 \usepackage{polyglossia}
 \usepackage{graphicx}
 \usepackage{color}
-\usepackage[pass]{geometry}
 \usepackage{longtable}
 \setlength\LTpre{0pt} % space before table
 
 \setmainlanguage{english}
-\setotherlanguages{inuktitut} %% or other languages
 
-%\newfontfamily\optsans{Snellen.ttf}[LetterSpace=40]
 \newfontfamily\optsans{ArialB.ttf}[LetterSpace=40]
-\def\optotype#1#2{\begin{tabular}{c}\resizebox{!}{#1}{\selectfont\optsans#2}\end{tabular}}
 
-% https://tex.stackexchange.com/q/172234
+\definecolor{smoke}{rgb}{0.6,0.6,0.6}
+% Removed unused color definitions for cyan and red
+
+\pagestyle{empty}
+
+% Adjust factor based on the viewing distance used for your ETDRS chart
+\def\factor{1}
+
+% Commands adapted from the provided Snellen template for ETDRS chart use
 \newcommand{\deflen}[2]{%
   \expandafter\newlength\csname #1\endcsname
   \expandafter\setlength\csname #1\endcsname{#2}%
 }
 
+\newcommand{\acuity}[3]{% Adjusted to take three parameters
+  \resizebox{!}{0.25in}{\textbf{#1} \textit{\color{smoke}(#2)} \textit{#3}}%
+}
+
+\newcommand{\optotype}[2]{%
+  \begin{tabular}{c}
+    \resizebox{!}{#1}{\optsans #2}\\
+  \end{tabular}%
+}
+
+
 % Length definitions
-\deflen{SetA}{250.0pt} % 60 m
-\deflen{SetB}{126.0pt} % 30.48 m
-\deflen{SetC}{88.0pt} % 21.336 m
-\deflen{SetD}{63.0pt} % 15.24 m
-\deflen{SetE}{50.0pt} % 12.192 m
-\deflen{SetF}{38.0pt} % 9.144 m
-\deflen{SetG}{31.0pt} % 7.62 m
-\deflen{SetH}{25.0pt} % 6.096 m
-\deflen{SetI}{19.0pt} % 4.572 m
-\deflen{SetJ}{16.0pt} % 3.9624 m
-\deflen{SetK}{13.0pt} % 3.048 m
+\deflen{SetA}{165.0pt} % 4 m
+\deflen{SetB}{131.0pt} % 4 m
+\deflen{SetC}{104.0pt} % 4 m
+\deflen{SetD}{83.0pt} % 4 m
+\deflen{SetE}{66.0pt} % 4 m
+\deflen{SetF}{52.0pt} % 4 m
+\deflen{SetG}{41.0pt} % 4 m
+\deflen{SetH}{33.0pt} % 4 m
+\deflen{SetI}{26.0pt} % 4 m
+\deflen{SetJ}{21.0pt} % 4 m
+\deflen{SetK}{16.0pt} % 4 m
+\deflen{SetL}{13.0pt} % 4 m
+\deflen{SetM}{10.0pt} % 4 m
+\deflen{SetN}{8.0pt} % 4 m
 
 
-\definecolor{smoke}{rgb}{0.6,0.6,0.6}
-\definecolor{cyan}{RGB}{0,255,0}
-\definecolor{red}{RGB}{255,0,0}
-\deflen{acuitylen}{0.25in}
-\def\acuity#1#2{\resizebox{!}{\acuitylen}{$#1^{\,\color{smoke}(#2)}$}}
-
-\makeatletter
-\def\colorrule#1#2{\color{#1}\leavevmode\leaders\hrule height #2\hfill\kern\z@}
-\makeatother
-
-\pagestyle{empty}
 
 \begin{document}
 
-\newgeometry{margin=0.2in}
-
-% Tables
-
-\pagebreak
-\begin{center}
 \renewcommand*{\arraystretch}{3.5}
 \begin{longtable}{rc}
-\acuity{20/200}{6/60} & \optotype{\factor\SetA}{T} \\
-\acuity{20/100}{6/30} & \optotype{\factor\SetB}{EZ} \\
-\acuity{20/70}{6/21} & \optotype{\factor\SetC}{ZPF} \\
-\acuity{20/50}{6/15} & \optotype{\factor\SetD}{LFED} \\
-\acuity{20/40}{6/12} & \optotype{\factor\SetE}{FCZPT} \\
-& \colorrule{cyan}{0.65cm} \\
-\acuity{20/30}{6/9} & \optotype{\factor\SetF}{CZTDOL} \\
-\acuity{20/25}{6/8} & \optotype{\factor\SetG}{PDEZCLO} \\
-& \colorrule{red}{0.65cm} \\
-\acuity{20/20}{6/6} & \optotype{\factor\SetH}{LFTEDZCP} \\
-\acuity{20/15}{6/4.5} & \optotype{\factor\SetI}{PLCTEDFZ} \\
-\acuity{20/13}{6/4} & \optotype{\factor\SetJ}{LCEOTFZP} \\
-\acuity{20/10}{6/3} & \optotype{\factor\SetK}{LOEPTZCDF} \\
+\acuity{20/200}{6/60}{LogMAR: 1.0} & \optotype{\factor\SetA}{DSCVR} \\
+\acuity{20/159}{6/48}{LogMAR: 0.9} & \optotype{\factor\SetB}{ZHVSO} \\
+\acuity{20/126}{6/38}{LogMAR: 0.8} & \optotype{\factor\SetC}{ZOHSN} \\
+\acuity{20/100}{6/30}{LogMAR: 0.7} & \optotype{\factor\SetD}{KOSRZ} \\
+\acuity{20/80}{6/24}{LogMAR: 0.6} & \optotype{\factor\SetE}{ZRDSN} \\
+\acuity{20/63}{6/19}{LogMAR: 0.5} & \optotype{\factor\SetF}{CNKDS} \\
+\acuity{20/50}{6/15}{LogMAR: 0.4} & \optotype{\factor\SetG}{HSRKN} \\
+\acuity{20/40}{6/12}{LogMAR: 0.3} & \optotype{\factor\SetH}{VRHDZ} \\
+\acuity{20/32}{6/10}{LogMAR: 0.2} & \optotype{\factor\SetI}{OKZNV} \\
+\acuity{20/25}{6/8}{LogMAR: 0.1} & \optotype{\factor\SetJ}{SVOCR} \\
+\acuity{20/20}{6/6}{LogMAR: 0.0} & \optotype{\factor\SetK}{SCOKD} \\
+\acuity{20/16}{6/5}{LogMAR: -0.1} & \optotype{\factor\SetL}{HZRDN} \\
+\acuity{20/13}{6/4}{LogMAR: -0.2} & \optotype{\factor\SetM}{DRCSO} \\
+\acuity{20/10}{6/3}{LogMAR: -0.3} & \optotype{\factor\SetN}{NCOKZ} \\
 \end{longtable}
-\end{center}
+
 \end{document}
