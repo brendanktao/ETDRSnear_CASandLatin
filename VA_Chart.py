@@ -18,7 +18,7 @@ glyphs = [5] * 14  # Assuming 14 lines for demonstration
 
 # TeX code templates
 t1 = Template(r"\deflen{$name}{$length$unit} % $dist m")
-t2 = Template(r"\acuity{20/$feet}{6/$meters} & \optotype{\factor\$name}{$string} \\")
+t2 = Template(r"\acuity{20/$feet}{6/$meters}{LogMAR: $logMAR} & \optotype{\factor\$name}{$string} \\")
 
 def randstring(length=1):
     """Generate a random string of optotypes."""
@@ -56,11 +56,11 @@ for line, g in enumerate(glyphs):
         t2.substitute(
             meters=visual_acuity_6,
             feet=visual_acuity_20,
+            logMAR=round(logMAR_value, 2), # Including the logMAR value rounded to two decimal places
             name="Set" + ascii_uppercase[line],
             string=randstring(g)
         )
     )
 print(r"""\end{longtable}
 \end{center}""")
-
 
