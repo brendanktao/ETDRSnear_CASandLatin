@@ -42,8 +42,6 @@ for line in range(len(glyphs)):
     )
 
 print("\n% Tables\n")
-print(r"""\pagebreak
-\begin{center}
 \renewcommand*{\arraystretch}{3.5}
 \begin{longtable}{rc}""")
 for line, g in enumerate(glyphs):
@@ -62,5 +60,4 @@ for line, g in enumerate(glyphs):
         )
     )
 print(r"""\end{longtable}
-\end{center}""")
 
