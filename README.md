@@ -17,7 +17,7 @@ The ETDRS chart was developed to be a standardized alternative to the Snellen ch
 4. Layout: The ETDRS chart consists of 14 rows, with each row containing five letters of the same size. The letters are arranged in a specific way to minimize memorization and ensure each visual acuity level is represented by a balanced set of optotypes.
 5. Visual Acuity Notation: Visual acuity on the ETDRS chart is recorded in logMAR values. This system allows for a more precise and standardized measurement of visual acuity than the Snellen fraction. A logMAR value of 0 corresponds to "20/20" vision in the Snellen system, with positive values indicating worse visual acuity and negative values indicating better visual acuity.
 
-This repository should produce a Latin alphabet ETDRS chart that follows the above standardized parameters. This repository also produces a CAS-equivalent ETDRS chart, using the optotypes of ᐱ, ᑎ, ᑭ, ᒧ, ᒋ, ᒥ, ᑯ, ᒧ, and ᔨ, which are relatively preserved across Inuktitut, Cree, and Ojibwe. Note that, currently, there is no specific optotype set recommended for CAS, as is the case with Sloan letters for Latin characters.
+This repository should produce a Latin alphabet ETDRS chart that follows the above standardized parameters. This repository also produces a CAS-equivalent ETDRS chart, using the optotypes of ᐱ, ᑎ, ᑭ, ᒧ, ᒋ, ᒥ, ᑯ, ᒧ, and ᔨ, which are relatively preserved across Inuktitut, Cree, and Ojibwe. Note that, currently, there is no specific optotype set recommended for CAS, as is the case with Sloan letters for Latin characters. Also, fonts often used for eyecharts, such as "opticiansans" do not yet support CAS.
 
 
 ## Further reading
