@@ -1,3 +1,5 @@
+#to do --- columns to save space, line spacing between lines needs to vary with the letter size
+
 import math, random
 from string import ascii_uppercase, Template
 
@@ -18,7 +20,9 @@ glyphs = [5] * 14  # Assuming 14 lines for demonstration
 
 # TeX code templates
 t1 = Template(r"\deflen{$name}{$length$unit} % $dist m")
-t2 = Template(r"\acuity{20/$feet}{6/$meters}{LogMAR: $logMAR} & \optotype{\factor\$name}{$string} \\")
+# t2 = Template(r"\acuity{20/$feet}{6/$meters}{LogMAR: $logMAR} & \optotype{\factor\$name}{$string} \\")
+t2 = Template(r"$feet & $meters & $logMAR & \optotype{\factor\$name}{$string} \\")
+
 
 def randstring(length=1):
     """Generate a random string of optotypes."""
@@ -41,9 +45,13 @@ for line in range(len(glyphs)):
         )
     )
 
+#print("\n% Tables\n")
+#\renewcommand*{\arraystretch}{3.5}
+#\begin{longtable}{rc}""")
 print("\n% Tables\n")
-\renewcommand*{\arraystretch}{3.5}
-\begin{longtable}{rc}""")
+print(r"\begin{longtable}{cccc}")
+print(r"\textbf{20/} & \textbf{6/} & \textbf{LogMAR} & \textbf{Optotypes} \\")
+print(r"\hline")
 for line, g in enumerate(glyphs):
     # Correct logMAR scaling for visual acuity reporting
     logMAR_value = -0.1 * (line - 10)
@@ -59,5 +67,6 @@ for line, g in enumerate(glyphs):
             string=randstring(g)
         )
     )
-print(r"""\end{longtable}
+#print(r"""\end{longtable}
+print(r"\end{longtable}")
 
