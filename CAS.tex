@@ -5,7 +5,7 @@
 \geometry{
     paperwidth=64.8cm,
     paperheight=62.2cm,
-    margin=2in} % or another value if you need a margin
+    margin=1in} 
 
 \usepackage{calc}
 \usepackage{eso-pic}
@@ -18,10 +18,9 @@
 
 \setmainlanguage{english}
 
-\newfontfamily\optsans{ArialB.ttf}[LetterSpace=40]
+\newfontfamily\optsans{AboriginalSerifBOLD.ttf}[LetterSpace=60]
 
 \definecolor{smoke}{rgb}{0.6,0.6,0.6}
-% Removed unused color definitions for cyan and red
 
 \pagestyle{empty}
 
@@ -44,7 +43,6 @@
   \end{tabular}%
 }
 
-
 % Length definitions
 \deflen{SetA}{165.0pt} % 4 m
 \deflen{SetB}{131.0pt} % 4 m
@@ -62,26 +60,15 @@
 \deflen{SetN}{8.0pt} % 4 m
 
 
-
 \begin{document}
 
-\renewcommand*{\arraystretch}{3.5}
-\begin{longtable}{rc}
-\acuity{20/200}{6/60}{LogMAR: 1.0} & \optotype{\factor\SetA}{ᑭᒧᑎᒋᑯ} \\
-\acuity{20/159}{6/48}{LogMAR: 0.9} & \optotype{\factor\SetB}{ᑭᑯᐱᔨᑎ} \\
-\acuity{20/126}{6/38}{LogMAR: 0.8} & \optotype{\factor\SetC}{ᒧᑯᑭᒋᒧ} \\
-\acuity{20/100}{6/30}{LogMAR: 0.7} & \optotype{\factor\SetD}{ᐱᒧᒋᑭᑎ} \\
-\acuity{20/80}{6/24}{LogMAR: 0.6} & \optotype{\factor\SetE}{ᒧᒋᑯᑎᐱ} \\
-\acuity{20/63}{6/19}{LogMAR: 0.5} & \optotype{\factor\SetF}{ᒧᒧᒋᑯᐱ} \\
-\acuity{20/50}{6/15}{LogMAR: 0.4} & \optotype{\factor\SetG}{ᑎᔨᑯᑭᐱ} \\
-\acuity{20/40}{6/12}{LogMAR: 0.3} & \optotype{\factor\SetH}{ᒥᒧᑭᑯᐱ} \\
-\acuity{20/32}{6/10}{LogMAR: 0.2} & \optotype{\factor\SetI}{ᒋᑯᐱᑎᒧ} \\
-\acuity{20/25}{6/8}{LogMAR: 0.1} & \optotype{\factor\SetJ}{ᐱᒧᔨᑭᑯ} \\
-\acuity{20/20}{6/6}{LogMAR: -0.0} & \optotype{\factor\SetK}{ᑎᒥᑭᒧᐱ} \\
-\acuity{20/16}{6/5}{LogMAR: -0.1} & \optotype{\factor\SetL}{ᑭᐱᒋᔨᒥ} \\
-\acuity{20/13}{6/4}{LogMAR: -0.2} & \optotype{\factor\SetM}{ᒧᑭᔨᑎᒋ} \\
-\acuity{20/10}{6/3}{LogMAR: -0.3} & \optotype{\factor\SetN}{ᑭᒧᐱᑎᔨ} \\
-\end{longtable}
+% Tables
 
-\end{document}
-
+\begin{longtable}{ccc}
+\textbf{20/ / 6/} & \textbf{Optotypes} & \textbf{LogMAR} \\ \hline
+\noalign{\vskip 131.0 pt} 200 / 60 & \optotype{\factor\SetA}{ᑭᐱᒧᔨᒥ} & 1.0\\
+\noalign{\vskip 104.0 pt} 159 / 48 & \optotype{\factor\SetB}{ᒋᐱᑎᒥᔨ} & 0.9\\
+\noalign{\vskip 83.0 pt} 126 / 38 & \optotype{\factor\SetC}{ᒧᔨᒥᑎᒋ} & 0.8\\
+\noalign{\vskip 66.0 pt} 100 / 30 & \optotype{\factor\SetD}{ᑯᑎᒥᑭᒧ} & 0.7\\
+\noalign{\vskip 52.0 pt} 80 / 24 & \optotype{\factor\SetE}{ᑭᔨᐱᒧᒋ} & 0.6\\
+\noalign{\vskip 41.0 pt} 63 / 19 & \optotype{\factor\SetF}{ᒧᒋᑯᑎᐱ} & 0.5\\
