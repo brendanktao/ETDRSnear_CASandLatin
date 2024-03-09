@@ -46,7 +46,7 @@ for line in range(len(glyphs)):
     )
 
 #print("\n% Tables\n")
-#\renewcommand*{\arraystretch}{3.5}
+#\renewcommand*{\arraystretch}{3.5}     #need to make this geometric spacing
 #\begin{longtable}{rc}""")
 print("\n% Tables\n")
 print(r"\begin{longtable}{cccc}")
