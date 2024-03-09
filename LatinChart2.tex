@@ -1,0 +1,85 @@
+%! TEX program = XeLaTeX
+
+\documentclass{article}
+\usepackage{geometry}
+\geometry{
+    paperwidth=64.8cm,
+    paperheight=62.2cm,
+    margin=2in} % or another value if you need a margin
+
+\usepackage{calc}
+\usepackage{eso-pic}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{longtable}
+\setlength\LTpre{0pt} % space before table
+
+\setmainlanguage{english}
+
+% \newfontfamily\optsans{ArialB.ttf}[LetterSpace=40]
+\newfontfamily\optsans{arialb.ttf}[LetterSpace=60]
+
+\definecolor{smoke}{rgb}{0.6,0.6,0.6}
+
+\pagestyle{empty}
+
+% Adjust factor based on the viewing distance used for your ETDRS chart
+\def\factor{1}
+
+% Commands adapted from the provided Snellen template for ETDRS chart use
+\newcommand{\deflen}[2]{%
+  \expandafter\newlength\csname #1\endcsname
+  \expandafter\setlength\csname #1\endcsname{#2}%
+}
+
+\newcommand{\acuity}[3]{% Adjusted to take three parameters
+  \resizebox{!}{0.25in}{\textbf{#1} \textit{\color{smoke}(#2)} \textit{#3}}%
+}
+
+\newcommand{\optotype}[2]{%
+  \begin{tabular}{c}
+    \resizebox{!}{#1}{\optsans #2}\\
+  \end{tabular}%
+}
+
+
+% Length definitions
+\deflen{SetA}{165.0pt} % 4 m
+\deflen{SetB}{131.0pt} % 4 m
+\deflen{SetC}{104.0pt} % 4 m
+\deflen{SetD}{83.0pt} % 4 m
+\deflen{SetE}{66.0pt} % 4 m
+\deflen{SetF}{52.0pt} % 4 m
+\deflen{SetG}{41.0pt} % 4 m
+\deflen{SetH}{33.0pt} % 4 m
+\deflen{SetI}{26.0pt} % 4 m
+\deflen{SetJ}{21.0pt} % 4 m
+\deflen{SetK}{16.0pt} % 4 m
+\deflen{SetL}{13.0pt} % 4 m
+\deflen{SetM}{10.0pt} % 4 m
+\deflen{SetN}{8.0pt} % 4 m
+
+
+
+\begin{document}
+
+\begin{longtable}{ccc}
+\textbf{20/ / 6/} & \textbf{Optotypes} & \textbf{LogMAR} \\ \hline
+\noalign{\vskip 131.0 pt} 200 / 60 & \optotype{\factor\SetA}{DSRKN} & 1.0\\
+\noalign{\vskip 104.0 pt} 159 / 48 & \optotype{\factor\SetB}{CKZOH} & 0.9\\
+\noalign{\vskip 83.0 pt} 126 / 38 & \optotype{\factor\SetC}{ONRKD} & 0.8\\
+\noalign{\vskip 66.0 pt} 100 / 30 & \optotype{\factor\SetD}{KZVDC} & 0.7\\
+\noalign{\vskip 52.0 pt} 80 / 24 & \optotype{\factor\SetE}{VSHZO} & 0.6\\
+\noalign{\vskip 41.0 pt} 63 / 19 & \optotype{\factor\SetF}{HDKCR} & 0.5\\
+\noalign{\vskip 33.0 pt} 50 / 15 & \optotype{\factor\SetG}{CSRHN} & 0.4\\
+\noalign{\vskip 26.0 pt} 40 / 12 & \optotype{\factor\SetH}{SVZDK} & 0.3\\
+\noalign{\vskip 21.0 pt} 32 / 10 & \optotype{\factor\SetI}{NCVOZ} & 0.2\\
+\noalign{\vskip 16.0 pt} 25 / 8 & \optotype{\factor\SetJ}{RHSDV} & 0.1\\
+\noalign{\vskip 13.0 pt} 20 / 6 & \optotype{\factor\SetK}{SNROH} & -0.0\\
+\noalign{\vskip 10.0 pt} 16 / 5 & \optotype{\factor\SetL}{ODHKR} & -0.1\\
+\noalign{\vskip 8.0 pt} 13 / 4 & \optotype{\factor\SetM}{ZKCSN} & -0.2\\
+\noalign{\vskip 0 pt} 10 / 3 & \optotype{\factor\SetN}{CRHDV} & -0.3\\
+\end{longtable}
+\end{document}
