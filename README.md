@@ -1,8 +1,10 @@
 # Code to Generate ETDRS visual acuity charts in Latin and Canadian Aboriginal Syllabics (CAS)
 *Adapted from https://github.com/manu-mannattil/vachart AND https://github.com/shaanbhambra/CAS_Snellen_VA_Chart*
 
-This repository contains a LaTeX file and a Python script for making random ETDRS charts.  PDFs with Latin and CAS ETDRS charts, used at the standard 4m viewing distance, can be produced with this respository. Steps: 
-1. Run "VA_Chart.py" to generate the TeX output. Comment in/out whether you want the output to reflect Latin or CAS characters.
+This repository contains a LaTeX file and a Python script for making random ETDRS charts.  PDFs with Latin and CAS ETDRS charts, used at the standard 4m viewing distance, can be produced with this respository. 
+
+Steps for CAS: 
+1. Run "ETDRS_CAS.py" to generate the TeX output. This will create a random sequence of CAS letters to use in the ETDRS chart.
 2. Open "CAS.TeX". Identify the code output (using CAS characters) from "VA_Chart.py" that resembles what is found in CAS.text and replace the latter with the former. This should involve separately replacing the details under "Length definitions" and "\begin{document}". Repeat this for the "Latin.TeX".
 3. If viewing from a non-standard distance (other than 4m), be sure to adjust the "\factor" argument in the .TeX files to adjust accordingly.
 4. We recommend using [Overleaf](https://overleaf.com) for compiling each .TeX file to generate the corresponding PDF eye chart. You will need to alter the settings to use the XeLaTeX compiler.
