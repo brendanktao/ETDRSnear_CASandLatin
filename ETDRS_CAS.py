@@ -11,7 +11,6 @@ base_optotype_size = BASE_OPTOTYPE_MM * mm_to_points
 
 # Optotypes: Comment in/out whether you want CAS / Latin alphabet
 optotypes = list("ᐱᑎᑭᒧᒋᒥᑯᒧᔨ")
-# optotypes = list("CDHKNORSVZ")
 
 # ETDRS chart configuration
 glyphs = [5] * 14  # 14 lines is standard for ETDRS
