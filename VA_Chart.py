@@ -51,8 +51,8 @@ for line in range(len(glyphs)):
     )
 
 output.append("\n% Tables\n")
-output.append(r"\begin{longtable}{c|c|c|c}")
-output.append(r"\textbf{20/} & \textbf{Optotypes} & \textbf{6/} & \textbf{LogMAR} \\")
+output.append(r"\begin{longtable}{cccc}")
+output.append(r"\textbf{20/} & \textbf{Optotypes} & \textbf{6/} & \textbf{LogMAR} \\[30pt]")
 output.append(r"\hline")
 for line, g in enumerate(glyphs):
     # Correct logMAR scaling for visual acuity reporting
