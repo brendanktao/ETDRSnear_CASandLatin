@@ -18,10 +18,10 @@
 
 \setmainlanguage{english}
 
-\newfontfamily\optsans{ArialB.ttf}[LetterSpace=40]
+% \newfontfamily\optsans{ArialB.ttf}[LetterSpace=40]
+\newfontfamily\optsans{arialb.ttf}[LetterSpace=60]
 
 \definecolor{smoke}{rgb}{0.6,0.6,0.6}
-% Removed unused color definitions for cyan and red
 
 \pagestyle{empty}
 
@@ -65,22 +65,22 @@
 
 \begin{document}
 
-\renewcommand*{\arraystretch}{3.5}
-\begin{longtable}{rc}
-\acuity{20/200}{6/60}{LogMAR: 1.0} & \optotype{\factor\SetA}{DSCVR} \\
-\acuity{20/159}{6/48}{LogMAR: 0.9} & \optotype{\factor\SetB}{ZHVSO} \\
-\acuity{20/126}{6/38}{LogMAR: 0.8} & \optotype{\factor\SetC}{ZOHSN} \\
-\acuity{20/100}{6/30}{LogMAR: 0.7} & \optotype{\factor\SetD}{KOSRZ} \\
-\acuity{20/80}{6/24}{LogMAR: 0.6} & \optotype{\factor\SetE}{ZRDSN} \\
-\acuity{20/63}{6/19}{LogMAR: 0.5} & \optotype{\factor\SetF}{CNKDS} \\
-\acuity{20/50}{6/15}{LogMAR: 0.4} & \optotype{\factor\SetG}{HSRKN} \\
-\acuity{20/40}{6/12}{LogMAR: 0.3} & \optotype{\factor\SetH}{VRHDZ} \\
-\acuity{20/32}{6/10}{LogMAR: 0.2} & \optotype{\factor\SetI}{OKZNV} \\
-\acuity{20/25}{6/8}{LogMAR: 0.1} & \optotype{\factor\SetJ}{SVOCR} \\
-\acuity{20/20}{6/6}{LogMAR: 0.0} & \optotype{\factor\SetK}{SCOKD} \\
-\acuity{20/16}{6/5}{LogMAR: -0.1} & \optotype{\factor\SetL}{HZRDN} \\
-\acuity{20/13}{6/4}{LogMAR: -0.2} & \optotype{\factor\SetM}{DRCSO} \\
-\acuity{20/10}{6/3}{LogMAR: -0.3} & \optotype{\factor\SetN}{NCOKZ} \\
+\begin{longtable}{ccc}
+\textbf{20/ / 6/} & \textbf{Optotypes} & \textbf{LogMAR} \\ \hline
+\noalign{\vskip 131.0 pt} 200 / 60 & \optotype{\factor\SetA}{HVZDS} & 1.0\\
+\noalign{\vskip 104.0 pt} 159 / 48 & \optotype{\factor\SetB}{NCVKD} & 0.9\\
+\noalign{\vskip 83.0 pt} 126 / 38 & \optotype{\factor\SetC}{CZSHN} & 0.8\\
+\noalign{\vskip 66.0 pt} 100 / 30 & \optotype{\factor\SetD}{ONVSR} & 0.7\\
+\noalign{\vskip 52.0 pt} 80 / 24 & \optotype{\factor\SetE}{KDNRO} & 0.6\\
+\noalign{\vskip 41.0 pt} 63 / 19 & \optotype{\factor\SetF}{ZKCSV} & 0.5\\
+\noalign{\vskip 33.0 pt} 50 / 15 & \optotype{\factor\SetG}{DVOHC} & 0.4\\
+\noalign{\vskip 26.0 pt} 40 / 12 & \optotype{\factor\SetH}{OHVCK} & 0.3\\
+\noalign{\vskip 21.0 pt} 32 / 10 & \optotype{\factor\SetI}{HZCKO} & 0.2\\
+\noalign{\vskip 16.0 pt} 25 / 8 & \optotype{\factor\SetJ}{NCKHD} & 0.1\\
+\noalign{\vskip 13.0 pt} 20 / 6 & \optotype{\factor\SetK}{ZHCSR} & -0.0\\
+\noalign{\vskip 10.0 pt} 16 / 5 & \optotype{\factor\SetL}{SZRDN} & -0.1\\
+\noalign{\vskip 8.0 pt} 13 / 4 & \optotype{\factor\SetM}{HCDRO} & -0.2\\
+\noalign{\vskip 0 pt} 10 / 3 & \optotype{\factor\SetN}{RDOSN} & -0.3\\
 \end{longtable}
 
 \end{document}
