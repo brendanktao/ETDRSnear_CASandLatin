@@ -4,15 +4,15 @@
 This repository contains a LaTeX file and a Python script for making random ETDRS *near* charts.  PDFs with Latin and CAS ETDRS *near* charts, used at the standard 40cm viewing distance, can be produced with this respository. 
 
 Steps for CAS: 
-1. Run "ETDRS_CAS.py" to generate the TeX output (this will create a random sequence of CAS letters to use in the ETDRS *near* chart). Set aside this output so that you can refer to it in steps 2/3.
-2. Open "CAS.TeX" and identify the code section "Length definitions". Copy the corresponding TeX output from step 1 and use it to replace the "Length definitions" section in LaTeX file.
-3. In "CAS.TeX", identify the code section that begins with "\begin{longtable}{ccc}" and ends with "\end{longtable}". Copy the corresponding TeX output from step 1 and use it to replace this section in LaTeX file.
+1. Run "ETDRSnear_CAS.py" to generate the TeX output (this will create a random sequence of CAS letters to use in the ETDRS *near* chart). Set aside this output so that you can refer to it in steps 2/3.
+2. Open "CASnear.TeX" and identify the code section "Length definitions". Copy the corresponding TeX output from step 1 and use it to replace the "Length definitions" section in LaTeX file.
+3. In "CASnear.TeX", identify the code section that begins with "\begin{longtable}{ccc}" and ends with "\end{longtable}". Copy the corresponding TeX output from step 1 and use it to replace this section in LaTeX file.
 4. If viewing from a non-standard distance (other than 40cm), be sure to adjust the "\factor" argument in the .TeX file to adjust accordingly.
 8. We recommend using [Overleaf](https://overleaf.com) for compiling the .TeX file to generate the corresponding PDF eye chart. You will need to alter the settings to use the XeLaTeX compiler.
 
 Steps for Latin: 
-1. Run "ETDRS_Latin.py" to generate the TeX output. Unlike for CAS, there are 3 standard sequences of optotypes (Chart1/Chart2/ChartR). Choose one of these sequences where indicated in the code and then set aside the output so that you can refer to it in steps 2/3.
-2. Open "Latin.TeX" and identify the code section "Length definitions". Copy the corresponding TeX output from step 1 and use it to replace the "Length definitions" section in LaTeX file.
+1. Run "ETDRSnear_Latin.py" to generate the TeX output. Unlike for CAS, there are 3 standard sequences of optotypes (Chart1/Chart2/ChartR). Choose one of these sequences where indicated in the code and then set aside the output so that you can refer to it in steps 2/3.
+2. Open "LatinChart1near.TeX" (or equivalent) and identify the code section "Length definitions". Copy the corresponding TeX output from step 1 and use it to replace the "Length definitions" section in LaTeX file.
 3. In "Latin.TeX", identify the code section that begins with "\begin{longtable}{ccc}" and ends with "\end{longtable}". Copy the corresponding TeX output from step 1 and use it to replace this section in LaTeX file.
 4. If viewing from a non-standard distance (other than 40cm), be sure to adjust the "\factor" argument in the .TeX file to adjust accordingly.
 8. We recommend using [Overleaf](https://overleaf.com) for compiling the .TeX file to generate the corresponding PDF eye chart. You will need to alter the settings to use the XeLaTeX compiler.
