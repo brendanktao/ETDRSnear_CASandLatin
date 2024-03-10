@@ -4,8 +4,8 @@ from string import ascii_uppercase, Template
 # Constants for ETDRS chart generation
 METER_TO_INCHES = 39.37008
 INCH_TO_POINTS = 72
-VIEWING_DISTANCE_METERS = 4  # Standard viewing distance for ETDRS
-BASE_OPTOTYPE_MM = 5.82  #Base optotype size for 20/20 vision viewed from 4 meters (in mm)
+VIEWING_DISTANCE_METERS = 0.4  # Standard viewing distance for near ETDRS viewing
+BASE_OPTOTYPE_MM = 0.582  #in mm, for 0 LogMAR viewed from 40 cm
 mm_to_points = METER_TO_INCHES * INCH_TO_POINTS / 1000
 base_optotype_size = BASE_OPTOTYPE_MM * mm_to_points
 
@@ -31,7 +31,7 @@ optotype_sizes = []
 for line in range(len(glyphs)):
     logMAR_value = -0.1 * (line - 10)
     scaling_factor = 10 ** logMAR_value
-    optotype_size = round(base_optotype_size * scaling_factor, 0)
+    optotype_size = round(base_optotype_size * scaling_factor, 6)
     optotype_sizes.append(optotype_size)
     
     output.append(
