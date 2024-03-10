@@ -61,6 +61,9 @@ for line, g in enumerate(glyphs):
     
     # Use the mapping to get the correct M-size for the LogMAR value
     M_size = logMAR_to_Msize.get(round(logMAR_value, 1), "N/A")  # Default to "N/A" if not found
+
+    # Format logMAR_value for output, ensuring "0.0" instead of "-0.0"
+    formatted_logMAR = "{:.1f}".format(logMAR_value if logMAR_value != 0 else 0.0)
     
     # Calculate spacing based on the next line's optotype size, if available
     vspace = optotype_sizes[line + 1] if line + 1 < len(optotype_sizes) else 0
