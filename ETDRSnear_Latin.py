@@ -10,16 +10,20 @@ mm_to_points = METER_TO_INCHES * INCH_TO_POINTS / 1000
 base_optotype_size = BASE_OPTOTYPE_MM * mm_to_points
 
 # Predefined sequences for the Latin alphabet ETDRS chart
-chart1 = "NCKZORHSDKDOVHRCZRHSONHRCDKSNVZSOKNCKDNRSRZKDHZOVCNVDOKVHCNOSVHCZOZDVK"
-chart2 = "DSRKNCKZOHONRKDKZVDCVSHZOHDKCRCSRHNSVZDKNCVOZRHSDVSNROHODHKRZKCSNCRHDV"
-chartR = "HVZDSNCVKDCZSHNONVSRKDNROZKCSVDVOHCOHVCKHZCKONCKHDZHCSRSZRDNHCDRORDOSN"
+charts = {
+    'Chart 1': "NCKZORHSDKDOVHRCZRHSONHRCDKSNVZSOKNCKDNRSRZKDHZOVCNVDOKVHCNOSVHCZOZDVK",
+    'Chart 2': "DSRKNCKZOHONRKDKZVDCVSHZOHDKCRCSRHNSVZDKNCVOZRHSDVSNROHODHKRZKCSNCRHDV",
+    'Chart R': "HVZDSNCVKDCZSHNONVSRKDNROZKCSVDVOHCOHVCKHZCKONCKHDZHCSRSZRDNHCDRORDOSN"
+}
 
-# Function to get a substring from the predefined sequences
-def get_sequence(line, length=5):
-    # Choose the sequence based on the line number
-    sequence = chart1 if line % 3 == 0 else chart2 if line % 3 == 1 else chartR
+# Function to get a substring from the specified chart sequence
+def get_sequence(chart_name, line, length=5):
+    sequence = charts[chart_name]
     start_index = (line % (len(sequence) // length)) * length
     return sequence[start_index:start_index + length]
+
+# Select which chart to use for the entire ETDRS chart
+selected_chart = 'Chart 1'  # This can be changed to 'Chart 2' or 'Chart R' as needed
 
 # ETDRS chart configuration
 glyphs = [5] * 14  # 14 lines is standard for ETDRS
@@ -56,16 +60,20 @@ for line in range(len(glyphs)):
     )
 
 output.append("\n% Tables\n")
-output.append(r"\begin{longtable}{cccc}")
-output.append(r"\textbf{20/  6/} & \textbf{Optotypes (Latin Alphabet Chart)} & \textbf{LogMAR} & \textbf{M-Size} \\ \hline")
+output.append("\\begin{longtable}{cccc}")
+output.append("\\textbf{20/  6/} & \\textbf{Optotypes [Chart 1]} & \\textbf{LogMAR} & \\textbf{M-Size} \\\\ \\hline")
 for line, g in enumerate(glyphs):
     logMAR_value = -0.1 * (line - 10)
     visual_acuity_20 = round(20 * 10 ** logMAR_value)
     visual_acuity_6 = round(6 * 10 ** logMAR_value)
-    sequence = get_sequence(line)  # Get the sequence for this line
+    sequence = get_sequence(selected_chart, line)  # Get the sequence for this line using the selected chart
     
     # Use the mapping to get the correct M-size for the LogMAR value
     M_size = logMAR_to_Msize.get(round(logMAR_value, 1), "N/A")  # Default to "N/A" if not found
+
+    # Correct negative zero to positive zero for display purposes
+    if abs(logMAR_value) < 1e-6:  # Check if logMAR_value is "close enough" to zero
+        logMAR_value = 0.0  # Set to positive zero
 
     # Calculate spacing based on the next line's optotype size, if available
     vspace = optotype_sizes[line + 1] if line + 1 < len(optotype_sizes) else 0
