@@ -23,7 +23,7 @@ def get_sequence(chart_name, line, length=5):
     return sequence[start_index:start_index + length]
 
 # Select which chart to use for the entire ETDRS chart
-selected_chart = 'Chart 1'  # This can be changed to 'Chart 2' or 'Chart R' as needed
+selected_chart = 'Chart 2'  # This can be changed to 'Chart 2' or 'Chart R' as needed
 
 # ETDRS chart configuration
 glyphs = [5] * 14  # 14 lines is standard for ETDRS
