@@ -61,7 +61,7 @@ for line in range(len(glyphs)):
 
 output.append("\n% Tables\n")
 output.append("\\begin{longtable}{cccc}")
-output.append("\\textbf{20/  6/} & \\textbf{Optotypes [Chart 1]} & \\textbf{LogMAR} & \\textbf{M-Size} \\\\ \\hline")
+output.append(f"\\textbf{{20/  6/}} & \\textbf{{Optotypes [{selected_chart}]}} & \\textbf{{LogMAR}} & \\textbf{{M-Size}} \\\\ \\hline")
 for line, g in enumerate(glyphs):
     logMAR_value = -0.1 * (line - 10)
     visual_acuity_20 = round(20 * 10 ** logMAR_value)
